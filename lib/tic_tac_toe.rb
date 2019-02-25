@@ -155,7 +155,7 @@ def play
       puts "Congratulations #{winner}!"
     end
     if draw? == true
-      puts "Cats Game!"
+      puts "Cat's Game!"
     end
 end
 end
