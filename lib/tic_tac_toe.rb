@@ -158,3 +158,11 @@ def play
 end
 end 
 
+if won?!= false
+       winner	      winner
+      puts "Congratulations #{winner}!"	      puts "Congratulations #{winner}!"
+    end	    end
+    if draw? == true	    if draw? == true
+      puts "Cats Game!"	      puts "Cats Game!"
+    end	    end
+
