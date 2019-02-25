@@ -150,7 +150,7 @@ def play
     turn
   end
    
-  if won?
+  if won? == true
     puts "Congratulations #{winner(@board)}!"
   else
   puts "Cat's Game!"
