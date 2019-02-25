@@ -25,8 +25,6 @@ class TicTacToe
   def input_to_index(input)
     index = input.to_i - 1
   end
-end 
-
 #move
  
 def move(index,marker)
@@ -156,3 +154,5 @@ def play
   puts "Cat's Game!"
   end
 end
+end 
+
