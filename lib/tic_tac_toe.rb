@@ -27,7 +27,6 @@ class TicTacToe
   end
 end 
 
-
 #move
  
 def move(index,marker)
@@ -53,6 +52,7 @@ def valid_move?(index)
    true
  else
   false
+
  end
 end
  
