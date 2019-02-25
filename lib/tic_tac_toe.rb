@@ -150,19 +150,12 @@ def play
     turn
   end
    
-  if won? == true
-    puts "Congratulations #{winner(@board)}!"
-  else
-  puts "Cat's Game!"
-  end
+  if won?!= false
+      winner
+      puts "Congratulations #{winner}!"
+    end
+    if draw? == true
+      puts "Cats Game!"
+    end
 end
-end 
-
-if won?!= false
-       winner	      winner
-      puts "Congratulations #{winner}!"	      puts "Congratulations #{winner}!"
-    end	    end
-    if draw? == true	    if draw? == true
-      puts "Cats Game!"	      puts "Cats Game!"
-    end	    end
 
