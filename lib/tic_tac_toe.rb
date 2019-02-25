@@ -31,90 +31,87 @@ class TicTacToe
  
   def move(index,marker)
     @board[index]=marker
-end
- 
- 
-#position_taken?
- 
-def position_taken?(index)
-  if @board[index] == " " || @board[index] == "" || @board[index] == nil
-    false
-   else
-    true
   end
-end
  
  
-#valid_move?
+  #position_taken?
  
-def valid_move?(index)
- if index.between?(0,8) && !position_taken?(index)
-   true
- else
-  false
-
- end
-end
- 
- 
-#turn
- 
-def turn
-  puts "Please enter 1-9:"
-  input=gets.strip
-  input=input_to_index(input)
-  if valid_move?(input)== true
-    move(input,current_player)
-    display_board
+  def position_taken?(index)
+   if @board[index] == " " || @board[index] == "" || @board[index] == nil
+      false
     else
-     puts "Invalid move, try again!"
-     turn
+      true
+    end
+  end
+ 
+ 
+  #valid_move?
+ 
+  def valid_move?(index)
+  if index.between?(0,8) && !position_taken?(index)
+    true
+  else
+    false
    end
   end
  
  
+  #turn
  
-#turn_count
- 
-def turn_count
-  counter=0
-    @board.each do |space|
-    if space !=" "
-      counter +=1
+  def turn
+    puts "Please enter 1-9:"
+    input=gets.strip
+    input=input_to_index(input)
+    if valid_move?(input)== true
+      move(input,current_player)
+      display_board
+      else
+      puts "Invalid move, try again!"
+      turn
     end
   end
-counter
-end
  
+  #turn_count
  
-#current_player
- 
-def current_player
-  turns = turn_count
-  if turns % 2 == 0
-    return "X"
-  else
-    return "O"
-  end
-end
- 
- 
-#won?
- 
-def won?
-    WIN_COMBINATIONS.each do |win_combination|
-      if @board[win_combination[0]]==@board[win_combination[1]]&&@board[win_combination[0]]==@board[win_combination[2]]&&@board[win_combination[0]]!=" "
-        return win_combination
+  def turn_count
+    counter=0
+      @board.each do |space|
+      if space !=" "
+        counter +=1
       end
-    end
-    false
+   end
+  counter
   end
  
  
-#full
+  #current_player
  
-def full?
-  @board.all? {|square| square == "X" || square == "O"}
+  def current_player
+    turns = turn_count
+   if turns % 2 == 0
+     return "X"
+   else
+     return "O"
+   end
+  end
+ 
+ 
+  #won?
+ 
+  def won?
+     WIN_COMBINATIONS.each do |win_combination|
+        if @board[win_combination[0]]==@board[win_combination[1]]&&@board[win_combination[0]]==@board[win_combination[2]]&&@board[win_combination[0]]!=" "
+          return win_combination
+        end
+      end
+      false
+    end
+ 
+ 
+  #full
+ 
+  def full?
+    @board.all? {|square| square == "X" || square == "O"}
 end
  
  
