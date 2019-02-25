@@ -112,50 +112,50 @@ class TicTacToe
  
   def full?
     @board.all? {|square| square == "X" || square == "O"}
-end
- 
- 
-#draw?
- 
-def draw?
-  !won? && full?
-end
- 
- 
-#over?
- 
-def over?
-  won? || draw?
-end
- 
- 
-#winner
- 
-def winner
-    who_wins = won?
-    if who_wins
-      @board[who_wins[0]]
-    else
-        nil
-    end
-end
-
-
- 
-#play
- 
-def play
-  while over? == false
-    turn
   end
+ 
+ 
+  #draw?
+ 
+  def draw?
+    !won? && full?
+  end
+ 
+ 
+  #over?
+ 
+  def over?
+    won? || draw?
+  end
+ 
+ 
+  #winner
+ 
+  def winner
+      who_wins = won?
+      if who_wins
+        @board[who_wins[0]]
+      else
+          nil
+      end
+  end
+
+
+ 
+  #play
+ 
+  def play
+    while over? == false
+      turn
+    end
    
-  if won?!= false
-      winner
-      puts "Congratulations #{winner}!"
-    end
-    if draw? == true
-      puts "Cat's Game!"
-    end
-end
+    if won?!= false
+        winner
+       puts "Congratulations #{winner}!"
+      end
+      if draw? == true
+       puts "Cat's Game!"
+     end
+  end
 end
 
